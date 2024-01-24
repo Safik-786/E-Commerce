@@ -1,0 +1,55 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+{% block main-content %}
+<div class="container-fluid my-1">
+  <div class="row lg-12 mx-0">
+    <h3 class='text-center heading p-2 '>Welcome {{request.user|capfirst}}</h3>
+    <div class="col-sm-2 border-end">
+      <ul class="list-unstyled">
+        <li class="d-grid"><a href="{% url 'profile' %}" class="btn {{active}}">Profile</a></li>
+        <li class="d-grid"><a href="{% url 'address' %}" class="btn">Address</a></li>
+      </ul>
+    </div>
+
+    <div class='col-sm-3 offset-sm-1  p-4 border'>
+      <div class='d-flex justify-content-center'><img src={% static 'app/images/user.png' %} height='50px' alt=""></div>
+      <p><b>Name</b>: {{request.user|capfirst}}</p>
+      <p><b>Locality</b>: {{ad.locality}}</p>
+      <p><b>AboutMe</b>: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nobis quidem id sequi corrupti recusandae nesciunt ducimus rerum quaerat. Ex molestiae iure facere?</p>
+      <p><b>City</b>: {{ad.city}}</p>
+      <p><b>State</b>: {{ad.state}}</p>
+      <p><b>Pin-Code</b>: {{ad.zipcode}}</p>
+    </div>
+    {% comment %} <h3 class='heading'>Add Address</h3> {% endcomment %}
+    <div class="col-sm-5 offset-sm-1 border pt-4">
+      <form action="" method="POST" novalidate class='px-5'>
+        {% csrf_token %}
+        <h3 class='heading alert alert-danger py-2'>Add Address</h3>
+        {% if messages %} 
+               {% for msg in messages %}
+                  <p {% if msg.tags %} class='alert alert-{{msg.tags}} mb-5' {% endif %}>{{msg}} 
+                    <i class="fa-solid fa-check"></i> </p>
+               {% endfor %}
+        {% endif %}
+
+        {% if form.non_field_error %}
+              {% for error in form.non_field_error %}
+                <p class='alert alert-danger '>{{error}}</p>
+              {% endfor %}
+        {% endif %}
+
+        {% for fm in form %}
+          <div class='form-group col-lg-8 mb-3'>
+            {{fm.label_tag}} {{fm}} <small class='text-danger d-block'>{{fm.error|striptags}}</small>
+          </div>
+        {% endfor %}
+        <div class="col-12 mt-3">
+          <button type="submit" class="btn btn-danger mb-3">Submit</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+{% endblock main-content %}

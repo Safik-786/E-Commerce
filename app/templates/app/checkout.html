@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-sm-6">
+      <h4 class='alert alert-success py-3 heading'>Order Summary</h4>
+      {% for item in cartitems %}
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5>Product: {{item.product.title}}</h5>
+          <p>Quantity: {{item.quantity}} </p>
+          <p class="fw-bold">Price: {{item.total_cost}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      <p>Total Cost + Rs. 70 =<strong class='border px-3'>{{totalamount}}</strong> </p>
+    <small><strong>Term and Condition: </strong>
+      
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ullam saepe! Iure optio repellat dolor velit, minus rem. Facilis cumque neque numquam laboriosam, accusantium adipisci nisi nihil in et quis?</small>
+  </div>
+  <div class="col-sm-4 offset-sm-1">
+    <h4>Select Shipping Address</h4>
+    <hr>
+    <form action="/paymentdone">
+      {% for ad in add %}
+      <div class="form-check  ">
+        <input class="form-check-input" type="radio" checked name='custid' id='custid{{forloop.counter}}' 
+        value="{{ad.id}}">
+        <label class="form-check-label fw-bold" for="custid{{forloop.counter}}">
+          Address: {{forloop.counter}} </label>
+      </div>
+      <div class="card shadow mb-5">
+        <div class="card-body">
+          <h5>{{ad.name}}</h5>
+        <p>{{ad.locality}} {{ad.city}} {{ad.state}} - {{ad.zipcode}}</p>
+      </div>
+    </div>
+    
+    
+    {% endfor %}
+    <div class='alert alert-success'><input class='form-check-input' type="radio" checked> Cash On Delivery</div>
+        <div class="text-end">
+          <button type="submit"  class="btn btn-warning mt-1 px-3 fw-bold">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}

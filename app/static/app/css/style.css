@@ -1,0 +1,145 @@
+.owl-carousel .item {
+    /* border: 1px solid black; */
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    ;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.owl-next {
+    float: right;
+}
+
+.owl-prev {
+    float: left;
+}
+
+.owl-prev span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.owl-next span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#logoss {
+    mix-blend-mode: multiply;
+    text-shadow: 5px 4px 11px rgb(0, 0, 0), 0 2px 5px rgb(0, 0, 0);
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+}
+.active{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.dropdown-toggle::after{
+    content: none;
+}
+.baddge{
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 600;
+    position: relative;
+    right: 10px;
+    top: -10px;
+}
+.heading{
+    text-align: center;
+    mix-blend-mode: multiply;
+  text-shadow: 5px 4px 11px rgb(71, 23, 23), 0 2px 5px rgb(59, 17, 37);
+  text-align: center;
+  color: white;
+}
+
+/* About us page */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.cont{
+    display: flex;
+}
+.left-box{
+
+}
+
+.right-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box1 , .box2{
+    margin: 30px 20px ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    background-color: azure;
+
+}
+/* end About us */
+
+/* star Rating */
+.checked {
+    color : yellow;
+    font-size : 15px;
+}
+.unchecked {
+    font-size : 15px;
+}
+
+
+
+
+/* extra */
+.shdo{
+    width: 200px;
+    color:black;
+}
+.shdo:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    /* padding-left: 5px;
+    padding-right: 5px; */
+    color: #dc3545;
+    border-radius: 5px;
+}
+.bttn{
+    text-decoration: none !important;
+    color: black;
+}
+
+
+/* scrollbar */
+
+.cnt::-webkit-scrollbar {
+    width: 10px;
+    /* height: 300px; */
+}
+
+.cnt::-webkit-scrollbar-track {
+    background-color: aqua !important;
+}
+
+.cnt::-webkit-scrollbar-thumb {
+    background-color: pink;
+    border-radius: 5px;
+}
+
+.cnt::-webkit-scrollbar-thumb:hover {
+    background-color: red;
+}
+
+
+/* image of the order and cart */
+.imgg{
+    padding: 5px;
+    border: 0.2px solid rgba(41, 32, 32, 0.452);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
