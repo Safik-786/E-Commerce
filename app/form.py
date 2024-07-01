@@ -35,3 +35,5 @@ class CustomerProfileForm(forms.ModelForm):
         'city':forms.TextInput(attrs={'class':'form-control'}),'state':forms.Select(attrs={'class':'form-control'}),'zipcode':forms.NumberInput(attrs={'class':'form-control'})}
         
         
+        
+        

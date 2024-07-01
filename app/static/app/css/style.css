@@ -1,3 +1,11 @@
+
+*{
+    font-family: "Times New Roman", Times, serif;
+    font-family: cursive;
+}
+
+
+
 .owl-carousel .item {
     /* border: 1px solid black; */
     font-size: 24px;
@@ -35,7 +43,7 @@ body::-webkit-scrollbar{
     font-size: 25px;
 }
 .active{
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
 }
 
@@ -142,4 +150,97 @@ body::-webkit-scrollbar{
     padding: 5px;
     border: 0.2px solid rgba(41, 32, 32, 0.452);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* transition: all 1s ease-in-out  ; */
 }
+
+.imggg{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all .5s ease-in-out  ;
+}
+
+.imggg-parent{
+    padding: 5px;
+    border: 0.2px solid rgba(41, 32, 32, 0.452);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow: hidden;
+}
+
+.imggg:hover{
+    transform: scale(.96);
+}
+
+.bg-custom{
+    /* background: linear-gradient(#00B09B, #96C93D)!important; */
+    /* background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9); */
+    /* background: linear-gradient(to right, #ee0979, #ff6a00); */
+    background: linear-gradient(to right, #11d431,#5be472, #e5bc54, #e43642, #ee0979);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* .bg-custom:hover{
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    background: linear-gradient(to left, #11d431,#7dfc92, #e5bc54, #e43642, #ee0979);
+} */
+
+/* ================================ */
+
+
+.bg-custom:hover {
+    /* background: linear-gradient(to right, #11d431, #5be472, #e5bc54, #e43642, #ee0979); */
+    background: linear-gradient(to left, #11d431,#7dfc92, #e5bc54, #e43642, #ee0979);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    background-size: 200% 200%;
+    animation: gradient-animation 3s ease-in-out infinite;
+}
+
+.bg-custom:hover {
+    background-position: right center; /* Adjust the background position */
+}
+
+/* Define the keyframes for the animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: right center;
+    }
+    40% {
+        background-position: left center;
+    }
+    100% {
+        background-position: right center;
+    }
+}
+
+
+/* ==================================== */
+
+
+
+
+
+
+
+
+
+
+
+.hov{
+    text-shadow: #03001e 3px 3px 7px;
+}
+
+.hov:hover{
+    /* color: cyan !important; */
+    color: #fff;
+    font-weight: 600;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }

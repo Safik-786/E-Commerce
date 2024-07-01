@@ -27,20 +27,20 @@
 <!--  BODY  -->
   
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger py-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom py-3">
      <div class="container">
-       <a class="navbar-brand" href="/" id="logoss">D-Cart</a>
+       <a class="navbar-brand " href="/" id="logoss">D-Cart</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
            <li class="nav-item">
-             <a class="nav-link text-white {% if request.path == '/' %}active{% endif %} " aria-current="page" href="/">Home</a>
+             <a class="nav-link text-white {% if request.path == '/' %}active{% endif %} hov" aria-current="page" href="/">Home</a>
            </li>
            
            <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle text-white  " href="#" id="electronicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <a class="nav-link dropdown-toggle text-white hov {% if request.path == '/mobile/' or  request.path == '/laptop/' %} active {% endif %} " href="#" id="electronicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Electronics
              </a>
              <ul class="dropdown-menu" aria-labelledby="electronicsDropdown">
@@ -50,12 +50,12 @@
            </li>
 
            <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <a class="nav-link dropdown-toggle text-white hov {% if request.path == '/topwear/' or  request.path == '/laptop/' %} active {% endif %}" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Fashion
              </a>
              <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
                <li><a class="dropdown-item" href="{% url "topwear" %}">Top Wear</a></li>
-               <li><a class="dropdown-item" href="#">Bottom Wear</a></li>
+               <li><a class="dropdown-item" href="{% url "topwear" %}">Bottom Wear</a></li>
              </ul>
            </li>
          </ul>
@@ -86,7 +86,7 @@
           {% if request.user.is_authenticated %}
 
             <li class="nav-item dropdown mx-2">
-              <a class="nav-link dropdown-toggle text-white " href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white hov {% if  request.path == '/profile/' or  request.path == '/passwordchange/' or  request.path == '/logout/' %} active {% endif %}" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Profile
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
@@ -103,11 +103,11 @@
 
             <li class="nav-item ">
               <a href="{% url 'showcart' %}" class="nav-link text-white
-              {% if request.path == '/cart/'%} active{% endif %}"> Cart <sup class="badge baddge" style="background-color: rgba(255,255,255,0.4) ; color:black;">{{totalitem}} </sup></a>
+              {% if request.path == '/cart/'%} active{% endif %}  hov"> Cart <sup class="badge baddge" style="background-color: rgba(255,255,255,0.4) ; color:black;">{{totalitem}} </sup></a>
              </li>
           
              <li class="nav-item"> 
-              <a class="nav-link text-white {% if request.path == '/orders/' %}active{% endif %}" aria-current="page" href="/orders">Orders</a>
+              <a class="nav-link text-white {% if request.path == '/orders/' %}active{% endif %} hov" aria-current="page" href="/orders">Orders</a>
             </li>
 
 
@@ -122,31 +122,31 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
                 <li class="nav-item mx-2">
-                  <a href="{% url 'login' %}" class="nav-link text-dark">Login</a>
+                  <a href="{% url 'login' %}" class="nav-link text-dark hov">Login</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a href="{% url 'customerregistration' %}" class="nav-link text-dark">Register</a>
+                  <a href="{% url 'customerregistration' %}" class="nav-link text-dark hov">Register</a>
                 </li>
               </ul>
             </li>
 
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-white hov" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Aboutus
               </a>
               <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
                 <li class="nav-item mx-2">
-                  <a href="{% url 'about' %}" class="nav-link text-dark">About</a>
+                  <a href="{% url 'about' %}" class="nav-link text-dark hov">About</a>
                 </li>
                 <li class="nav-item mx-2">
-                  <a href="{% url 'contact' %}" class="nav-link text-dark">Contact</a>
+                  <a href="{% url 'contact' %}" class="nav-link text-dark hov">Contact</a>
                 </li>
               </ul>
             </li>
 
             <li class="nav-item"> 
-              <a class="nav-link text-white {% if request.path == '/admin' %}active{% endif %}" aria-current="page" href="/admin">Admin</a>
+              <a class="nav-link text-white {% if request.path == '/admin' %}active{% endif %} hov" aria-current="page" href="/admin">Admin</a>
             </li>
 
             
